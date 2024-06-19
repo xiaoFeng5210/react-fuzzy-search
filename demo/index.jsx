@@ -1,6 +1,7 @@
 import { createRoot } from 'react-dom/client'
 // 引入组件
 import './index.scss'
+import FuzzySearchInput from '../src'
 
 function App() {
   return (
