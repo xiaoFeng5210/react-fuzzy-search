@@ -5,9 +5,9 @@ const baseConfig = require('./webpack.base.js') // 引用公共的配置
 
 const prodConfig = {
   mode: 'production', // 生产模式
-  entry: path.join(__dirname, '../src/index.tsx'),
+  entry: path.join(__dirname, './src/index.tsx'),
   output: {
-    path: path.join(__dirname, '../lib/'),
+    path: path.join(__dirname, './lib/'),
     filename: 'index.js',
     libraryTarget: 'umd', // 采用通用模块定义
     libraryExport: 'default', // 兼容 ES6 Module、CommonJS 和 AMD 模块规范

@@ -20,6 +20,7 @@
     "declaration": true,
     "outDir": "dist",
     "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "suppressImplicitAnyIndexErrors": true
   },
