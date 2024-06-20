@@ -43,6 +43,14 @@ const devConfig = {
         ],
       },
       {
+        test: /css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+        ],
+      },
+      {
         test: /.min.css$/,
         use: [
           { loader: 'style-loader' },
@@ -51,6 +59,8 @@ const devConfig = {
       },
     ],
   },
+  plugins: [
+  ],
   // 开发服务器设置
   devServer: {
     static: {
