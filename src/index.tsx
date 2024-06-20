@@ -1,5 +1,9 @@
 function FuzzySearchInput() {
-  return (<div>测试渲染组件</div>)
+  return (
+    <div>
+      <input type="text" placeholder="Search" />
+    </div>
+  )
 }
 
 export default FuzzySearchInput
