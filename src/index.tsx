@@ -1,18 +1,22 @@
 import './index.css'
-import { useState } from 'react'
+import { FC } from 'react'
+import SearchPanel from './components/search-panel'
 
 interface FuzzySearchInputProps {
-  placeholder: string
-  styles: {}
+  placeholder?: string
+  styles?: {}
   value: any
   onChange: (e: any) => void
 }
 
-function FuzzySearchInput() {
-  const [value, setValue] = useState('')
+const FuzzySearchInput: FC<FuzzySearchInputProps> = ({ value, onChange, placeholder = 'Search...' }) => {
+  const changeInput = (text: any) => {
+    onChange(text)
+  }
   return (
     <div className="search_input_layout">
-      <input type="text" className="search-input" placeholder="Search..." value={value} onChange={e => setValue(e.target.value)} />
+      <input type="text" className="search-input" placeholder={placeholder} value={value} onChange={e => changeInput(e.target.value)} />
+      <SearchPanel />
     </div>
   )
 }
