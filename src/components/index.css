@@ -20,6 +20,9 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    height: 0;
+    animation: expand-list 1s ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 .result-item {
@@ -30,4 +33,21 @@
 
 .result-item:hover {
     background-color: #f0f0f0;
+}
+
+.list_animate {
+    animation: expand-list 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes expand-list {
+    0% {
+        height: 0;
+    }
+    50% {
+        height: 200px;
+    }
+    100% {
+        height: 400px;
+    }
 }
