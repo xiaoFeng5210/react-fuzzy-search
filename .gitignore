@@ -137,3 +137,6 @@ dist
 # misc
 .DS_Store
 .idea
+
+lib
+lib/**/*
