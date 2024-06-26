@@ -1,3 +1,6 @@
+const { resolve } = require('node:path')
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+
 module.exports = {
   resolve: {
     // 定义 import 引用时可省略的文件后缀名
@@ -17,4 +20,12 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new ForkTsCheckerWebpackPlugin({
+      async: false,
+      typescript: {
+        configFile: resolve(__dirname, 'tsconfig.json'),
+      },
+    }),
+  ],
 }

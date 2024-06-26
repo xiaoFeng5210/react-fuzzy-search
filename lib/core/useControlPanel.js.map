@@ -1,0 +1,1 @@
+{"version":3,"file":"useControlPanel.js","sourceRoot":"","sources":["../../src/core/useControlPanel.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,OAAO,CAAA;AAEhC,gBAAe;IACP,IAAA,KAAkC,QAAQ,CAAC;QAC/C,SAAS,EAAE,KAAK;QAChB,aAAa,EAAE,EAAE;KAClB,CAAC,EAHK,YAAY,QAAA,EAAE,eAAe,QAGlC,CAAA;IAEF,OAAO;QACL,YAAY,cAAA;QACZ,eAAe,iBAAA;KAChB,CAAA;AACH,CAAC,EAAA"}

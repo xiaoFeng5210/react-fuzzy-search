@@ -1,7 +1,7 @@
 const path = require('node:path')
 const { merge } = require('webpack-merge')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin') // 用于将组件的css打包成单独的文件输出到`lib`目录中
-const baseConfig = require('./webpack.base.js') // 引用公共的配置
+const baseConfig = require('./webpack.base.js')
 
 const prodConfig = {
   mode: 'production', // 生产模式
@@ -43,6 +43,21 @@ const prodConfig = {
             },
           },
           { loader: 'sass-loader' },
+        ],
+      },
+      {
+        test: /css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+        ],
+      },
+      {
+        test: /.min.css$/,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
         ],
       },
     ],
