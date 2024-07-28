@@ -19,13 +19,14 @@ const FuzzySearchInput: FC<FuzzySearchInputProps> = ({ value, onChange, placehol
 
   const handleInputChange = async (text: string) => {
     // TODO: 处理逻辑
-    setPanelControl({ ...panelControl, showLoading: false })
+    const searchResults = data.filter(item => item.label.includes(text))
+    setPanelControl({ ...panelControl, showPanel: true, showLoading: false, searchResults })
     if (!text) {
-      setPanelControl({ ...panelControl, showPanel: false })
+      setPanelControl({ ...panelControl, showPanel: true, showLoading: false, searchResults: data })
     }
-    onChange(text)
   }
   const changeInput = (text: string) => {
+    onChange(text)
     if (debounceTimerRef.current) {
       clearTimeout(debounceTimerRef.current)
       debounceTimerRef.current = undefined
@@ -50,7 +51,7 @@ const FuzzySearchInput: FC<FuzzySearchInputProps> = ({ value, onChange, placehol
     <div className="search_input_layout">
       <input type="text" className="search-input" placeholder={placeholder} value={value} onBlur={blurInput} onFocus={() => focusInput()} onChange={e => changeInput(e.target.value)} />
       {
-        panelControl.showPanel && <SearchPanel loading={panelControl.showLoading} options={data} />
+        panelControl.showPanel && <SearchPanel filterOptions={panelControl.searchResults} loading={panelControl.showLoading} options={data} />
       }
     </div>
   )
